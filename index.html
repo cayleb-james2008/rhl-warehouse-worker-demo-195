@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark" />
+<meta name="theme-color" content="#0a0a0a" />
+<link rel="icon" href="./app/favicon.svg" type="image/svg+xml" />
+<title>RHL warehouse — your agent (demo)</title>
+<style>
+  :root { --ink:#fafafa; --muted:#a4a4a4; --bg:#0a0a0a; --panel:#151515; --line:#2c2c2c; --warn:#edb345; --ok:#6fcf97; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; -webkit-text-size-adjust:100%; }
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 64px; }
+  .chip { display:inline-block; border:1px solid var(--warn); color:var(--warn); border-radius:6px; padding:1px 8px; font-size:.72rem; font-weight:700; letter-spacing:.08em; }
+  h1 { font-size: 1.5rem; line-height:1.2; letter-spacing:-.015em; margin: 12px 0 6px; }
+  h2 { font-size: 1.02rem; margin: 26px 0 8px; }
+  p { margin: 0 0 12px; }
+  .lead { color:#e8e8e8; }
+  .muted { color:var(--muted); font-size:.92rem; }
+  .demo { border:1px solid var(--warn); background:#1d1708; color:#ffd88a; border-radius:10px; padding:10px 12px; font-size:.9rem; }
+  .grid { display:grid; grid-template-columns: 1fr; gap:10px; margin:14px 0 4px; }
+  @media (min-width: 620px) { .grid { grid-template-columns: 1fr 1fr; } }
+  a.card { display:block; border:1px solid var(--line); border-radius:12px; background:var(--panel); padding:14px; color:var(--ink); text-decoration:none; }
+  a.card b { display:block; font-size:1.02rem; margin-bottom:4px; }
+  a.card span { display:block; color:var(--muted); font-size:.9rem; }
+  a.card .go { color:var(--ink); font-weight:650; margin-top:10px; }
+  a.card:active { border-color:#4a4a4a; }
+  video { width:100%; max-height:78vh; background:#000; border-radius:12px; border:1px solid var(--line); display:block; }
+  .btn { display:inline-block; margin-top:10px; padding:11px 16px; border-radius:10px; background:var(--ink); color:#0a0a0a; font-weight:650; text-decoration:none; }
+  ul { margin:0 0 12px; padding-left:20px; }
+  li { margin-bottom:6px; }
+  code { font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.86em; }
+  footer { border-top:1px solid var(--line); margin-top:28px; padding-top:14px; color:var(--muted); font-size:.85rem; }
+</style>
+</head>
+<body>
+<main>
+  <span class="chip">DEMO DATA ONLY</span>
+  <h1>RHL warehouse — your agent (demo)</h1>
+  <p class="lead">A warehouse operator's phone app, the warehouse board it drives, and the shared library behind it — running end to end on demo data.</p>
+  <p class="demo"><b>Demo data only — not RHL production; never the live RHL board.</b> The call is a scripted transcript with no telephony and no live AI; the board shows test jobs on its demo backend; the library is an isolated demo instance.</p>
+
+  <div class="grid">
+    <a class="card" href="./app/?demo=rhl">
+      <b>Warehouse worker phone app</b>
+      <span>Chat with the demo agent, place the truck-company call, add the job to the board, build the skill.</span>
+      <span class="go">Open the app →</span>
+    </a>
+    <a class="card" href="./board/?demo=reset#key=demo-employee">
+      <b>Warehouse board</b>
+      <span>The running board on the demo backend: test jobs on line F, as added by the agent.</span>
+      <span class="go">Open the board →</span>
+    </a>
+  </div>
+
+  <h2>Walkthrough — one continuous take on the running build</h2>
+  <p class="muted">Recorded on an Android phone from the first screen to the last, with no cuts.</p>
+  <video controls playsinline preload="metadata" src="./walkthrough-phone.mp4"></video>
+  <a class="btn" href="./walkthrough-phone.mp4">Download the MP4</a>
+
+  <h2>What is served here</h2>
+  <ul>
+    <li><b>The page</b> you are reading (this landing page).</li>
+    <li><b>The app</b> at <a href="./app/?demo=rhl">./app/</a> and <b>the board</b> at <a href="./board/?demo=reset#key=demo-employee">./board/</a> — the delivered demo build, byte-identical to the pack.</li>
+    <li><b>The walkthrough video</b> above, byte-identical to the delivered take.</li>
+  </ul>
+  <p class="muted"><b>Static-snapshot note:</b> this is a static publication with no server-side API. The library view therefore shows a labelled frozen snapshot of the demo library; “Build the skill” replays the publication into that snapshot. The walkthrough take was recorded on the live demo stack, where the real library review gate ran.</p>
+
+  <footer>RHL warehouse worker demo pack · demo data only · no login · the served bytes are proven equal to the delivered build.</footer>
+</main>
+</body>
+</html>
